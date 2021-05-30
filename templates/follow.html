@@ -1,0 +1,17 @@
+{% extends "base.html" %} 
+{% block title %} Подписки {% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        {% include "include/menu.html" with index=True %}
+        {% block header %} Подписки {% endblock %}
+                {% for post in page %}
+                    {% include "include/post_item.html" with post=post %}
+                {% endfor %}
+    </div>
+
+
+            {% include "include/paginator.html"%}
+
+{% endblock %}
